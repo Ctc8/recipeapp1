@@ -32,7 +32,11 @@
     <div class="input-forms">
       <label for="ingredients"><p>I want to cook with...</p></label>
       <div class="wrapper-tags" id="include">
-        <input type="text" placeholder="Type here..." class="input-tag" />
+        <div>
+          <input type="text" placeholder="Type here..." class="input-tag" />
+        
+          <ul class="autofill-dropdown"></ul>
+        </div>
       </div>
 
       <label for="ingredients"><p>I want to avoid...</p></label>
@@ -64,6 +68,7 @@
 
     <div id="recipe-list"></div>
     <script src="request.js"></script>
+    <script src="autofill.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
