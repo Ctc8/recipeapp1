@@ -5,7 +5,9 @@ const wrapper_tags_include = document.querySelector("#include");
 const wrapper_tags_exclude = document.querySelector("#exclude");
 const tags_length = document.querySelector(".tags-length");
 
-//let tags_list_include = [];
+const populateRecipe = (id, title, ingredients, image) => {
+  console.log(id, title, ingredients, image);
+};
 
 class textBox {
   tags_list = [];
