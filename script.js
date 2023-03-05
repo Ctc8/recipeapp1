@@ -16,6 +16,11 @@ const populateRecipe = (id, title, ingredients, image) => {
     newCard.querySelector(".ingredient2").innerText = ingredients[1];
     newCard.querySelector(".ingredient3").innerText = ingredients[2];
 
+    getURL(id, (url)=>{
+      newCard.querySelector("a").href = url;
+    });
+    
+
     // for(let i = 0; i < ingredients.length; i++){
 
     //     var templateIngredient = document.getElementById("ingredient-template");

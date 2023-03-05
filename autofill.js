@@ -1037,7 +1037,7 @@ const sortedIngredientsList = INGREDIENTS_LIST.sort();
 const input  = document.querySelector(".input-tag");
 const autofillDropdown = document.querySelector(".autofill-dropdown");
 
-input.addEventListener("input", (e) => {
+input.addEventListener("keyup", (e) => {
   clearDropdown();
   if (input.value !== '') {
     autofillDropdown.style.display= 'block';
