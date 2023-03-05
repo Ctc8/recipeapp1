@@ -41,7 +41,7 @@
 .recipe-container {
     display: flex;
     flex-direction: row;
-    position: absolute;
+    justify-content: center;
     width: 706px;
     height: 222px;
     left: 287px;
