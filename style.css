@@ -1,0 +1,133 @@
+p {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+::placeholder {
+    font-family: "Inter", sans-serif;
+}
+
+.Logo-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    height: 150px;
+    /* border: 1px solid; */
+}
+
+.name-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo {
+    width: 100px;
+    margin-right: 20px;
+    border: 1px solid;
+}
+
+.name {
+    font-family: 'Inter', sans-serif;
+    font-size: 80px;
+    /* border: 1px solid; */
+}
+
+.phrase {
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    /* border: 1px solid; */
+}
+
+.input-form {
+    border-radius: 3px;
+    width: 500px;
+    padding: 10px;
+    /* border: 1px solid; */
+}
+
+.wrapper-tags {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: inset 0 0 1px 0 #cbcbcb;
+    padding: 10px;
+    text-indent: 9px;
+}
+
+.input-tag {
+    font-family: "Inter", sans-serif;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 4px 0;
+    flex: 1;
+}
+
+/* .wrapper-tags {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.input-tag {
+    height: 35px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    background-color: #f3f3f38e;
+    text-indent: 10px;
+} */
+
+.recipe-button {
+    width: 234px;
+    height: 50px;
+    color: white;
+    border: none;
+    background-color: #424242;
+    font-family: "inter", sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.item-tag {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    width: max-content;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 8%);
+    padding: 6px;
+    background-color: #424242;
+    color: #FFF;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: default;
+}
+
+.btn-rm-tag {
+    width: 18px;
+    height: 18px;
+    border: none;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    font-size: 11px;
+    cursor: pointer;
+}
