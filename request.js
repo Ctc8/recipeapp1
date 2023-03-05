@@ -1,7 +1,7 @@
 const baseRequestURL = "https://api.spoonacular.com/recipes/complexSearch";
 const baseInfoURL = "https://api.spoonacular.com/recipes/";
 let offset;
-const NUMBER_OF_RECIPES_RETURNED = 10;
+const NUMBER_OF_RECIPES_RETURNED = 3;
 const APIKEY = "0113f2fe8f404a6497b758d92f711e18";
 
 const getURL = (id, callback) => {
