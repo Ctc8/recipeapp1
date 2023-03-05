@@ -46,6 +46,7 @@ class textBox {
     this.input_tag.addEventListener("keyup", (e) => {
       const val = this.input_tag.value;
       if (e.key == "Enter") {
+        clearDropdown();
         if (this.tags_list.some((e) => e.text == val)) {
           return alert("Duplicate Tags");
         }
