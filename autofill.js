@@ -1034,12 +1034,12 @@ const INGREDIENTS_LIST = [
 
 const sortedIngredientsList = INGREDIENTS_LIST.sort();
 
-const input = document.querySelector(".input-tag");
+const input  = document.querySelector(".input-tag");
 const autofillDropdown = document.querySelector(".autofill-dropdown");
 
 input.addEventListener("input", (e) => {
   clearDropdown();
-  if (input.value.trim().length !== 0) {
+  if (input.value !== '') {
     autofillDropdown.style.display= 'block';
     for (let i of sortedIngredientsList) {
       if (
