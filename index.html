@@ -4,7 +4,54 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Benson Cooks</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
   </head>
-  <body></body>
+  <body>
+    <div class="Logo-header">
+      <div><img src="./images/CatLogo.png" class="logo" /></div>
+      <div class="name-header">
+        <div class="name">Benson Cooks</div>
+        <div class="phrase">The Ultimate Recipe Book</div>
+      </div>
+    </div>
+    <div class="input-forms">
+      <!-- <div class="wrapper-tags">
+        <input type="text" placeholder="Type here..." class="input-tag" />
+      </div>
+      <div class="wrapper-tags">
+        <input type="text" placeholder="Type here..." class="input-tag" />
+      </div> -->
+      <label for="ingredients"><p>I want to cook with...</p></label>
+      <div class="wrapper-tags" id="include">
+        <input type="text" placeholder="Type here..." class="input-tag" />
+      </div>
+
+      <label for="ingredients"><p>I want to avoid...</p></label>
+      <div class="wrapper-tags" id="exclude">
+        <input type="text" placeholder="Type here..." class="input-tag" />
+      </div>
+      <!-- Space for code readability-->
+    </div>
+    <div>
+      <button class="recipe-button">Find Recipes</button>
+    </div>
+    <div id="recipe-list"></div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
