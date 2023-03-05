@@ -1,12 +1,34 @@
-
-
 // Tags Implementation
 const wrapper_tags_include = document.querySelector("#include");
 const wrapper_tags_exclude = document.querySelector("#exclude");
 const tags_length = document.querySelector(".tags-length");
 
 const populateRecipe = (id, title, ingredients, image) => {
-  console.log(id, title, ingredients, image);
+    console.log(title, ingredients, image);
+
+    var templateCard = document.getElementById("recipe-card-template");
+    const newCard = templateCard.cloneNode(true);
+    newCard.style = 'display: flex'
+    newCard.querySelector(".recipe-photo").src = image;
+    newCard.querySelector(".recipe-name").innerText = title;
+
+    newCard.querySelector(".ingredient1").innerText = ingredients[0];
+    newCard.querySelector(".ingredient2").innerText = ingredients[1];
+    newCard.querySelector(".ingredient3").innerText = ingredients[2];
+
+    // for(let i = 0; i < ingredients.length; i++){
+
+    //     var templateIngredient = document.getElementById("ingredient-template");
+    //     var temp = templateIngredient.cloneNode(true);
+
+    //     temp.style = 'display: flex';
+    //     temp.innerHTML = ingredients[i];
+    //     console.log(temp);
+
+    //     newCard.querySelector(".ingredients-container").append(temp);
+    // }
+
+    document.getElementById("recipe-list").append(newCard);
 };
 
 class textBox {

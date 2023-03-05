@@ -17,7 +17,7 @@
 }
 
 .button {
-    display:flex;
+    display: flex;
     position: absolute;
     justify-content: center;
     align-items: center;
@@ -39,17 +39,17 @@
 }
 
 .recipe-container {
-    display: flex;
+    grid: flex;
     flex-direction: row;
     justify-content: center;
-    width: 706px;
-    height: 222px;
     left: 287px;
     top: 735px;
     padding: 29px 36px;
     box-sizing: border-box;
+    margin-bottom: 50px;
+    justify-content: space-between;
 
-    background: #FFFFFF;
+    /* background: #FFFFFF; */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.11);
     border-radius: 13px;
     
@@ -67,6 +67,7 @@
 .recipe-text { 
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 
 .recipe-name {
@@ -107,16 +108,18 @@
 .ingredients-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 
-.ingredient {
+.ingredient,
+.ingredient1,
+.ingredient2,
+.ingredient3{
     /*left: 41.8%;
     right: 51.09%;
     top: 50.15%;
     bottom: 47.75%;*/
     margin-right: 15px;
-    background: #B9E2FF;
+    background: #424242;
     border-radius: 4px;
     padding: 5px 12px;
     
@@ -125,7 +128,7 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    color: #000000;
+    color: white;
 }
 
 .learn-more {
@@ -154,7 +157,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 1000px;
 }
 
 ::placeholder {
@@ -210,19 +212,15 @@ body {
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 10px;
-    border: 1px solid #e0e0e0;
     box-shadow: inset 0 0 1px 0 #cbcbcb;
     padding: 10px;
     text-indent: 9px;
     width: 500px;
     height: 35px;
-    border-radius: 6px;
+    border-radius: 10px;
     font-size: 15px;
-    font-family: 'Inter', sans-serif;
     border: none;
     background-color: #f3f3f38e;
-    text-indent: 10px;
-    
 }
 
 .input-tag {
@@ -245,6 +243,7 @@ body {
     cursor: pointer;
     margin-top: 50px;
     margin-bottom: 100px;
+    border-radius: 10px;
 }
 
 .item-tag {
@@ -270,4 +269,10 @@ body {
     place-content: center;
     font-size: 11px;
     cursor: pointer;
+}
+
+#recipe-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

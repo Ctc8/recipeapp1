@@ -39,25 +39,28 @@
       <div class="wrapper-tags" id="exclude">
         <input type="text" placeholder="Type here..." class="input-tag" />
       </div>
-      <!-- Space for code readability-->
     </div>
     <div>
       <button class="recipe-button" onclick="getRecipes([],[])">Find Recipes</button>
     </div>
 
-    <div class="recipe-container">
-      <div class="recipe-photo"></div>
+  <div id="recipe-list">
+    <div style="display: none" id="recipe-card-template" class="recipe-container">
+      <img class="recipe-photo" src=""></img>
       <div class="recipe-text">
-        <div class="recipe-name">Recipe Name</div>
+        <div class="recipe-name"></div>
         <div class="ingredients-label">Ingredients:</div>  
         <div class="ingredients-container">
-          <div class="ingredient">Ingredient</div>
-          <div class="ingredient">Ingredient</div>
-          <div class="ingredient">Ingredient</div>
+          <div style="display: none" class="ingredient" id="ingredient-template"></div>
+          <div class="ingredient1"></div>
+          <div class="ingredient2"></div>
+          <div class="ingredient3"></div>
+          <div class="ingredient">...</div>
         </div>  
         <div class="learn-more"><a href="https://stackoverflow.com/">Learn More &#128279</a></div>
       </div>
     </div>
+  </div>
 
     <div id="recipe-list"></div>
     <script src="request.js"></script>
