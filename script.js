@@ -1,78 +1,41 @@
+const ingredients = [
+  "Egg", "Bread", "Rye Bread", "Wheaten Bread", "White Bread", "Wholewheat Bread", "Wort", "Arrack", "Beer", "Bantu Beer", "Brandy", "Anise Brandy", "Apple Brandy", "Armagnac Brandy", "Blackberry Brandy", "Cherry Brandy", "Cognac Brandy", "Papaya Brandy", "Pear Brandy", "Plum Brandy", "Raspberry Brandy", "Weinbrand Brandy", "Gin", "Rum", "Whisky", "Bourbon Whisky", "Canadian Whisky", "Finnish Whisky", "Japanese Whisky", "Malt Whisky", "Scotch", "Wine", "Bilberry Wine", "Botrytized Wine", "Champagne", "Cider", "Plum Wine", "Port Wine", "Red Wine", "Rose Wine", "Sake", "Sherry", "Sparkling Wine", "Strawberry Wine", "White Wine", "Coffee", "Mate", "Black Tea", "Green Tea", "Roibos Tea", "Barley", "Crispbread", "Malt", "Oats", "Rice", "Corn", "Corn Oil", "Popcorn", "Sweetcorn", "Butter", "Buttermilk", "Cheese", "Blue Cheese", "Camembert Cheese", "Cheddar Cheese", "Comte Cheese", "Cottage Cheese", "Cream Cheese", "Domiati Cheese", "Emmental Cheese", "Feta Cheese", "Goat Cheese", "Gruyere Cheese", "Limburger Cheese", "Mozzarella Cheese", "Munster Cheese", "Parmesan Cheese", "Provolone Cheese", "Romano Cheese", "Roquefort Cheese", "Russian Cheese", "Sheep Cheese", "Swiss Cheese", "Tilsit Cheese", "Ghee", "Milk", "Milk Fat", "Goat Milk", "Milk Powder", "Sheep Milk", "Skimmed Milk", "Yogurt", "Achilleas", "Arar", "Buchu", "Cajeput", "Camphor", "Cascarilla", "Cedar", "Chamomile", "Citronella Oil", "Citrus Peel Oil", "Eucalyptus Oil", "Fir", "Geranium", "Grapefruit Peel Oil", "Grass", "Hops Oil", "Hyacinth", "Hyssop Oil", "Lemon Grass", "Lemon Peel Oil", "Lime Peel Oil", "Lovage", "Mandarin Orange Peel Oil", "Mastic Gum", "Mentha Oil", "Myrrh", "Neroli Oil", "Orange Oil", "Orris", "Clary Sage", "Red Sage", "Spanish Sage", "Sandalwood", "Sea Buckthorns", "Sweet Grass", "Valerian", "Wattle", "Yarrow", "Ylang-Ylang", "Clam", "Crab", "Crayfish", "Kelp", "Krill", "Lobster", "Mollusc", "Oyster", "Prawn", "Scallop", "Shellfish", "Shrimp", "Trassi", "Squid", "Bonito", "Caviar", "Codfish", "Fish", "Fatty Fish", "Lean Fish", "Fish Oil", "Smoked Fish", "Salmon", "Artichoke", "Champaca", "Jasmine", "Lavendar", "Rose", "Apple", "Apple Sauce", "Apricot", "Avocado", "Babaco", "Banana", "Beli", "Byrsonima crassifolia", "Cashew Apple", "Cherimoya", "Coconut", "Currant", "Black Currant", "Red Currant", "White Currant", "Dates", "Durian", "Elderberry", "Feijoa", "Fig", "Grape", "Guava", "Hogplum", "Jackfruit", "Kiwifruit", "Litchi", "Loquat", "Malay Apple", "Mango", "Melon", "Musk Melon", "Naranjilla", "Orange", "Bitter Orange", "Papaya", "Mountain Papaya", "Passionfruit", "Yellow Passionfruit", "Pawpaw", "Peach", "Pear", "Bartlett Pear", "Prickly Pear", "Pepino", "Pineapple", "Plum", "Plumcot", "Pumpkin", "Quince", "Chinese Quince", "Raisin", "Roseapple", "Sapodilla", "Soursop", "Spineless Monkey Orange", "Starfruit", "Tamarind", "Woodapple", "Bilberry", "Blackberry", "Blueberry", "Cherry", "Bitter Cherry", "Sour Cherry", "Sweet Cherry", "Cloudberry", "Cranberry", "Gooseberry", "Lingonberry", "Loganberry", "Raspberry", "Strawberry", "Strawberry Jam", "Bergamot", "Citrus Fruits", "Grapefruit", "Kumquat", "Lemon", "Lime", "Mandarin Orange", "Satsuma Orange", "Tangerine", "Vanilla", "Mushroom", "Truffle", "Angelica", "Artemisia", "Basil", "Buckwheat", "Calamus", "Chervil", "Coriander", "Cornmint", "Dill", "Fennel", "Fenugreek", "Garlic", "Lemon Balm", "Liqourice", "Mint", "Rhubarb", "Rosemary", "Sage", "Spearmint", "Scotch Spearmint", "Tarragon", "Thyme", "Beef", "Beef Processed", "Chicken", "Frankfurter Sausage", "Ham", "Lamb", "Meat", "Mutton", "Pork", "Sukiyaki", "Turkey", "Almond", "Brazil Nut", "Cocoa", "Beans", "Lima Beans", "Kidney Beans", "Peanut", "Peas", "Soybean", "Soybean Oil", "Soybean Sauce", "Filbert", "Hazelnut", "Macadamia Nut", "Pecans", "Walnut", "Muskmallow", "Sesame", "Allium", "Alpinia", "Ceriman", "Chicory", "Hops", "Laurel", "Myrtle", "Olive", "Pine", "Sassafras", "Tea", "Fermented Tea", "Tobacco", "Watercress", "Creosote", "Honey", "Macaroni", "Mustard Oil", "Peanut Butter", "Peanut Oil", "Rye", "Storax", "Vinegar", "Anise", "Anise Hyssop", "Star Anise", "Caraway", "Cardamom", "Cassia", "Celery", "Cinnamon", "Clove", "Cumin", "Ginger", "Mace", "Marjoram", "Nutmeg", "Oregano", "Parsley", "Pepper", "Saffron", "Turmeric", "Green Beans", "Chive", "Endive", "Leek", "Lettuce", "Okra", "Onion", "Shallot", "Peppermint", "Broccoli", "Brussels Sprout", "Cabbage", "Cauliflower", "Horseradish", "Mustard", "Radish", "Turnip", "Kohlrabi", "Rutabaga", "Wasabi", "Capsicum", "Cherry Pepper", "Tomato", "Chayote", "Cucumber", "Beetroot", "Carrot", "Parsnip", "Sweet Potato", "Asparagus", "Cassava", "Potato", "Fried Potato", "Allspice", "Asafoetida", "Ashgourd", "Bittergourd", "Bottlegourd", "Canola Oil", "Carom Seed", "Chard", "Apple Cider Vinegar", "Colocasia", "Curry Leaf", "Drumstick Leaf", "Eggplant", "Flaxseed", "Jalapeno", "Kenaf", "Lotus", "Nigella Seed", "Kewda", "Pomegranate", "Poppy Seed", "Spinach", "Turkey Berry", "Water Chestnut", "White Pepper", "Garcinia Indica", "Cluster Bean", "Paneer", "Pigeon Pea", "Basmati Rice", "Ricotta Cheese", "Silver linden", "Redskin onion", "Lemon verbena", "Cashew nut", "Burdock", "Borage", "Capers", "Safflower", "Chestnut", "Chickpea", "Pummelo", "Arabica coffee", "Japanese persimmon", "Black crowberry", "Rocket salad", "Tartary buckwheat", "Black huckleberry", "Sunflower", "Swamp cabbage", "Grass pea", "Lentils", "Garden cress", "Mexican oregano", "Lupine", "Medlar", "Mulberry", "Black mulberry", "Evening primrose", "Millet", "Scarlet bean", "Pistachio", "Purslane", "Red raspberry", "Black raspberry", "Sorrel", "Summer savory", "Winter savory", "Cherry tomato", "Rowanberry", "Sorghum", "Dandelion", "Linden", "Small leaf linden", "Wheat", "Sparkleberry", "Common verbena", "Adzuki bean", "Gram bean", "Mung bean", "Climbing bean", "Muscadine grape", "Bayberry", "Elliott's blueberry", "Canada blueberry", "Buffalo currant", "Deerberry", "Ginseng", "Longan", "Rambutan", "Red rice", "Welsh onion", "Hard wheat", "Triticale", "Komatsuna", "Pak choy", "Jostaberry", "Kai lan", "Pineappple sage", "Skunk currant", "Breakfast cereal", "Pasta", "Biscuit", "Sourdough", "Spirit", "Abalone", "Abiyuch", "Acerola", "Acorn", "Winter squash", "Agar", "Red king crab", "Alfalfa", "Amaranth", "Arrowhead", "Arrowroot", "Atlantic herring", "Atlantic mackerel", "Painted comber", "Atlantic pollock", "Atlantic wolffish", "Bamboo shoots", "Striped bass", "Beaver", "Beech nut", "Beluga whale", "Bison", "Black bear", "Alaska blackfish", "Northern bluefin tuna", "Bluefish", "Wild boar", "Bowhead whale", "Breadfruit", "Rapini", "Brown bear", "Buffalo", "Burbot", "Giant butterbur", "American butterfish", "Butternut", "Butternut squash", "Cardoon", "Caribou", "Natal plum", "Carob", "Common carp", "Channel catfish", "Chia", "Chinese chestnut", "Garland chrysanthemum", "Cisco", "Nuttall cockle", "Common octopus", "Corn salad", "Cottonseed", "Catjang pea", "Squashberry", "Atlantic croaker", "Cusk", "Cuttlefish", "Mule deer", "Devilfish", "Dock", "Dolphin fish", "Freshwater drum", "Wild duck", "Freshwater eel", "Elk", "Emu", "Oregon yampah", "European anchovy", "European chestnut", "Turbot", "Fireweed", "Florida pompano", "Ginkgo nuts", "Greylag goose", "Greenland halibut", "Groundcherry", "Grouper", "Haddock", "Hippoglossus", "Horse", "Hyacinth bean", "Irish moss", "Pacific jack mackerel", "Japanese chestnut", "Jerusalem artichoke", "Jujube", "Jute", "Kale", "King mackerel", "Lambsquarters", "Leather chiton", "Common ling", "Lingcod", "White lupine", "Malabar spinach", "Mammee apple", "Purple mangosteen", "Alpine sweetvetch", "Milkfish", "Monkfish", "Moose", "Moth bean", "Mountain yam", "Striped mullet", "Muskrat", "New Zealand spinach", "Nopal", "Ocean pout", "North Pacific giant octopus", "Ohelo berry", "Opossum", "Ostrich", "Spotted seal", "Pacific herring", "Pacific rockfish", "Common persimmon", "Pheasant", "Northern pike", "Pili nut", "Colorado pinyon", "Pitanga", "French plantain", "American pokeweed", "Polar bear", "Prairie turnip", "Quinoa", "European rabbit", "Raccoon", "Rainbow smelt", "Rainbow trout", "Malabar plum", "Rose hip", "Roselle", "Orange roughy", "Sablefish", "Pink salmon", "Chum salmon", "Coho salmon", "Sockeye salmon", "Chinook salmon", "Atlantic salmon", "Salmonberry", "Common salsify", "Spanish mackerel", "Pacific sardine", "Scup", "Sea cucumber", "Steller sea lion", "Bearded seal", "Ringed seal", "Sea trout", "Sesbania flower", "American shad", "Shark", "Sheefish", "Sheepshead", "Hedge mustard", "Snapper", "Spelt", "Spirulina", "Squab", "Squirrel", "Greater sturgeon", "White sucker", "Pumpkinseed sunfish", "Swordfish", "Taro", "Teff", "Tilefish", "Mexican groundcherry", "Towel gourd", "Salmonidae", "Walleye", "Alaska pollock", "Whelk", "Broad whitefish", "Whitefish", "Whiting", "Wild rice", "Tea leaf willow", "Winged bean", "Yam", "Jicama", "Yautia", "Yellowfin tuna", "Yellowtail amberjack", "Pollock", "Albacore tuna", "Atlantic halibut", "Smelt", "Clupeinae", "Spiny lobster", "Black-eyed pea", "Deer", "Percoidei", "Perciformes", "Rabbit", "Beefalo", "Bivalvia", "Flatfish", "Walrus", "Alaska wild rhubarb", "Oriental wheat", "Yardlong bean", "Great horned owl", "Quail", "Boysenberry", "Rowal", "Jew's ear", "Shiitake", "Purple laver", "Wakame", "Enokitake", "Epazote", "Oyster mushroom", "Cloud ear fungus", "Maitake", "Ostrich fern", "Spot croaker", "Sourdock", "Tinda", "Atlantic menhaden", "Agave", "Narrowleaf cattail", "Jellyfish", "Anchovy", "Blue whiting", "Carp bream", "Chanterelle", "Sturgeon", "Charr", "Common dab", "Spiny dogfish", "Anatidae", "Anguilliformes", "True frog", "Garfish", "Gadiformes", "Mountain hare", "Lake trout", "Lemon sole", "Lumpsucker", "Scombridae", "Norway haddock", "Norway pout", "Oil palm", "Sago palm", "Persimmon", "Pikeperch", "Pleuronectidae", "Rock ptarmigan", "Pacific ocean perch", "Black salsify", "True seal", "Red algae", "Kombu", "Snail", "True sole", "Catfish", "Thistle", "Common Tuna", "Cetacea", "Columbidae", "Conch", "Berry wine", "Vodka", "Ice cream", "Vermouth", "Madeira wine", "Nougat", "Toffee", "Cake", "Pizza", "Ymer", "Pastry", "DragÌ©e", "Chewing gum", "Marzipan", "Salad dressing", "Salt", "Cream", "Sugar", "Sausage", "Meatball", "Pate", "Meat bouillon", "Whey", "Casein", "Leavening agent", "Marshmallow", "Gelatin", "Water", "Milk Human", "Dumpling", "Soup", "Syrup", "Remoulade", "Chocolate spread", "Fruit gum", "Meringue", "Cocoa butter", "Cocoa powder", "Chocolate", "Hot chocolate", "Kefir", "Miso", "Tofu", "Zwieback", "Roe", "Cichlidae", "Icing", "Snack bar", "Green turtle", "Burrito", "Hamburger", "Taco", "Tortilla", "Nachos", "Salad", "Dulce de leche", "Topping", "Sweet custard", "Egg roll", "Heart of palm", "Potato chip", "Tortilla chip", "Corn chip", "Hibiscus tea", "Stew", "Gelatin dessert", "Junket", "Falafel", "Frybread", "Lasagna", "Morchella", "Pancake", "Pectin", "Pudding", "Waffle", "Soy milk", "Meatloaf", "Cocktail", "Couscous", "Bulgur", "Coffee mocha", "Chimichanga", "Semolina", "Tapioca pearl", "Tostada", "Quesadilla", "Baked potato", "Hot dog", "Spread", "Enchilada", "Ketchup", "Horned melon", "Hushpuppy", "Fruit juice", "Relish", "Fruit salad", "Soy yogurt", "Cold cut", "Mixed nuts", "Babassu palm", "Shea tree", "Oil-seed Camellia", "Ucuhuba", "Phyllo dough", "Cooking oil", "Pie crust", "Pie", "Shortening", "Soy cream", "Ice cream cone", "Molasses", "Nance", "Natto", "Ravioli", "Scrapple", "Succotash", "Tamale", "Rice cake", "Tree fern", "Evaporated milk", "Flour", "Akutaq", "Pita bread", "Focaccia", "Bagel", "Piki bread", "French toast", "Oat bread", "Potato bread", "Cornbread", "Corn grits", "Multigrain bread", "Rice bread", "Pan dulce", "Raisin bread", "Wonton wrapper", "Trail mix", "Greenthread tea", "Vegetable juice", "Horchata", "Soft drink", "Milkshake", "Chocolate mousse", "Pupusa", "Empanada", "Arepa", "Ascidians", "Gefilte fish", "Yellow pond lily", "Fish burger", "Pot pie", "Stuffing", "Fudge", "Candy bar", "Condensed milk", "Margarine", "Hummus", "Potato puffs", "Potato gratin", "Chinese bayberry", "Green zucchini", "Zucchini", "Saskatoon berry", "Nanking cherry", "Japanese pumpkin", "Guinea hen", "Cucurbita", "Anise Oil", "Apple Juice", "Coconut Milk", "Coconut Oil", "Hops Beer", "Lemon Juice", "Brown Rice", "Tomato Juice", "Tomato Paste", "Tomato Puree", "Coriander Seed", "Lard", "Cured Ham", "Cayenne", "Yeast", "Tequila", "Sauerkraut", "Baking Powder", "Monosodium Glutamate", "Citric Acid", "Cooking Spray", "Gelatin", "Food Coloring", "Liquid Smoke", "Garam Masala", "Ginger Garlic Paste", "Coriander Cumin Seed Powder", "Chaat Masala", "Sambar Powder", "Chole Masala", "Rasam Powder", "Tandoori Masala", "Curry Powder", "Panch Pharon Seed", "Chicken Masala Powder", "Goda Masala", "Jal Jeera Powder", "Ginger Garlic Coriander Leaves", "Pulao Masala", "Dabeli Masala", "Cake Mix", "Half Half", "Ale", "Vermicelli", "Self Rising Flour", "Mayonnaise", "Salt-Pepper", "Croissant", "Puff Pastry", "Green Chutney", "Cajun Seasoning", "Vegetable Broth", "Tandoori Paste", "Mixed Vegetables", "Salad Creme", "Worcestershite Sauce", "Coleslaw", "Vegetable Stock", "Mascarpone", "Fettuccine", "Italian Seasoning", "Ketchup", "Spinach Fettuccine", "Hoisin Sauce", "Barbeque Sauce", "Sponge Cake", "Baking Mix", "Hot Sauce", "Dried Mixed Fruit", "Candied Mixed Fruit", "Gulkand", "Pancetta", "Phyllo", "Pie Crust", "Prosciutto", "Creole Seasoning", "Chinese Five Spice Powder", "Old Bay Seasoning", "Adobo Sauce", "Cracker Crumb", "Flour", "Ranch Dressing", "Poultry Seasoning", "Tahini", "Herbe de Provence", "Tart Shell", "Adobo", "Tomato Puree", "Tomato Paste", "Bear", "Whale", "Whitefish", "Seal", "Tuna", "Croaker", "Mackerel", "Pollock", "Anchovy", "Perch", "Frybread", "Sturgeon", "Hibiscus Tea", "Deer", "Octopus", "Oat Bread", "Pita Bread", "Raisin Bread", "Multigrain Bread", "Cornbread", "Pout", "Herring", "Smelt", "Crab", "Cooking Oil", "Rice Cake", "Trout", "Lobster", "Halibut", "Whiting", "Buffalo", "Catfish", "Salmon", "Haddock", "Persimmon", "Apple Sauce", "Cider Vinegar",
+];
 
+let sortedIngredients = ingredients.sort();
 
-// Tags Implementation
-const wrapper_tags_include = document.querySelector("#include");
-const wrapper_tags_exclude = document.querySelector("#exclude");
-const tags_length = document.querySelector(".tags-length");
+let input = document.getElementById("input");
 
-//let tags_list_include = [];
+input.addEventListener("keyup", (e) => {
+  removeElements();
+  for (let i of sortedIngredients) {
+    if (
+      i.toLowerCase().startsWith(input.value.toLowerCase()) &&
+      input.value != ""
+    ) {
+      let listItem = document.createElement("li");
 
-class textBox {
-  tags_list = [];
-  input_tag;
-  wrapper_tag;
-  constructor(wrapper_tag) {
-    this.wrapper_tag = wrapper_tag;
-    this.input_tag = wrapper_tag.querySelector(".input-tag");
-    this.input_tag.addEventListener("keyup", (e) => {
-      const val = this.input_tag.value;
-      if (e.key == "Enter") {
-        if (this.tags_list.some((e) => e.text == val)) {
-          return alert("Duplicate Tags");
-        }
-        if (val == "") {
-          return;
-        }
+      listItem.classList.add("list-items");
+      listItem.style.cursor = "pointer";
+      listItem.setAttribute("onclick", "displayIngredients('" + i + "')");
 
-        const tags = val
-          .split(",")
-          .map((e) => e.trim())
-          .filter((e) => e !== "");
+      let word = "<b>" + i.substr(0, input.value.length) + "</b>";
+      word += i.substr(input.value.length);
 
-        for (let i of tags) {
-          this.tags_list.unshift({
-            id: Math.random().toString(10).substring(2, 10),
-            text: i,
-          });
-        }
-        this.input_tag.value = "";
-        this.RenderTags();
-      }
-    });
-  }
+      listItem.innerHTML = word;
+      document.querySelector(".list").appendChild(listItem);
 
-  RenderTags() {
-    let cache = "";
-
-    this.wrapper_tag.querySelectorAll(".item-tag").forEach((e) => e.remove());
-    cache = "";
-
-    this.tags_list.forEach((e) => {
-      cache = `<div class="item-tag">
-                        <span>${e.text}</span>
-                        <button type="button" data-id="${e.id}"
-                        class="btn-rm-tag">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>`;
-      this.wrapper_tag.insertAdjacentHTML("afterbegin", cache);
-    });
-    this.HandleRmTags();
-  }
-
-  HandleRmTags() {
-    const btns = this.wrapper_tag.querySelectorAll(".btn-rm-tag");
-    if (btns.length > 0) {
-      btns.forEach((e) => {
-        e.onclick = () => {
-          const data_id = Number(e.getAttribute("data-id"));
-          this.tags_list = this.tags_list.filter((x) => x.id != data_id);
-          this.RenderTags();
-        };
-      });
     }
   }
-}
+});
 
-const includeIngredientsTextBox = new textBox (wrapper_tags_include);
-const excludeIngredientsTextBox = new textBox(wrapper_tags_exclude);
+function displayIngredients(value) {
+  input.value = value;
+  removeElements();
+}
+function removeElements() {
+  let items = document.querySelectorAll(".list-items");
+  items.forEach((item) => {
+    item.remove();
+  });
+}
